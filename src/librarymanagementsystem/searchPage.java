@@ -51,7 +51,7 @@ public class searchPage  extends JFrame {
     }
     public void BackgroundImage(){
         
-        backImage = new ImageIcon("book5.jpeg");
+        backImage = new ImageIcon("searchPage.jpeg");
         Image img = backImage.getImage();
         Image tempImg = img.getScaledInstance(1000,750,Image.SCALE_SMOOTH);
         backImage = new ImageIcon(tempImg);

@@ -49,7 +49,7 @@ public class updatePage extends JFrame implements ActionListener{
     }
     public void BackgroundImage(){
         
-        backImage = new ImageIcon("book4.jpeg");
+        backImage = new ImageIcon("updatePage.jpeg");
         Image img = backImage.getImage();
         Image tempImg = img.getScaledInstance(1000,750,Image.SCALE_SMOOTH);
         backImage = new ImageIcon(tempImg);

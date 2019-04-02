@@ -50,7 +50,7 @@ public class detailsPage extends JFrame{
     }
          public void BackgroundImage(){
         
-        backImage = new ImageIcon("book3.jpg");
+        backImage = new ImageIcon("detailPage.jpg");
         Image img = backImage.getImage();
         Image tempImg = img.getScaledInstance(1000,750,Image.SCALE_SMOOTH);
         backImage = new ImageIcon(tempImg);

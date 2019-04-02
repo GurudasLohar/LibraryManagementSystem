@@ -52,7 +52,7 @@ public class accountPage extends JFrame{
     }
     public void BackgroundImage(){
         
-        backImage = new ImageIcon("book6.jpg");
+        backImage = new ImageIcon("accountPage.jpg");
         Image img = backImage.getImage();
         Image tempImg = img.getScaledInstance(1000,750,Image.SCALE_SMOOTH);
         backImage = new ImageIcon(tempImg);

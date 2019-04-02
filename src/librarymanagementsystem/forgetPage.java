@@ -47,7 +47,7 @@ public class forgetPage extends JFrame implements ActionListener{
     }
     public void BackgroundImage(){
         
-        backImage = new ImageIcon("library7.jpg");
+        backImage = new ImageIcon("forgetPage.jpg");
         Image img = backImage.getImage();
         Image tempImg = img.getScaledInstance(1000,750,Image.SCALE_SMOOTH);
         backImage = new ImageIcon(tempImg);

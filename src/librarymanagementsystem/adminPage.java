@@ -50,7 +50,7 @@ public class adminPage extends JFrame implements ActionListener{
     }
      public void BackgroundImage(){
         
-        backImage = new ImageIcon("Admin1.jpg");
+        backImage = new ImageIcon("adminPage.jpg");
         Image img = backImage.getImage();
         Image tempImg = img.getScaledInstance(1000,750,Image.SCALE_SMOOTH);
         backImage = new ImageIcon(tempImg);

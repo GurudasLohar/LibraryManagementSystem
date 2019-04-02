@@ -65,7 +65,7 @@ public class returnPage extends JFrame implements ActionListener {
     }
     public void BackgroundImage(){
         
-        backImage = new ImageIcon("book2.png");
+        backImage = new ImageIcon("returnPage.png");
         Image img = backImage.getImage();
         Image tempImg = img.getScaledInstance(1000,750,Image.SCALE_SMOOTH);
         backImage = new ImageIcon(tempImg);

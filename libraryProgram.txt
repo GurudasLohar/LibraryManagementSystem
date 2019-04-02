@@ -1,0 +1,219 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package librarymanagementsystem;
+import java.awt.Color;
+import java.awt.Image;
+import java.awt.event.*;
+import javax.swing.*;
+/**
+ *
+ * @author LENOVO
+ */
+public class signupPage implements ActionListener{
+    
+    JFrame fr = new JFrame("Reader's Circle");
+    
+    ImageIcon backImage;
+    JLabel lbImage;
+    JPanel signup;
+    JButton btSave;
+    
+    public signupPage() {
+    
+        fr.setLayout(null);
+        fr.setSize(1000,750);
+        fr.setLocation(500,200);
+        fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        BackgroundImage();
+        SignupPanel();
+        
+        fr.setVisible(true);
+    }
+    
+    public void BackgroundImage(){
+        
+        backImage = new ImageIcon("library3.jpeg");
+        Image img = backImage.getImage();
+        Image tempImg = img.getScaledInstance(1000,750,Image.SCALE_SMOOTH);
+        backImage = new ImageIcon(tempImg);
+        lbImage = new JLabel("",backImage,JLabel.CENTER);
+        lbImage.setBounds(0,0,1000,750);
+        fr.add(lbImage);
+    }
+     public void SignupPanel(){
+        
+        signup = new JPanel();
+        signup.setLayout(null);
+        signup.setSize(400,650);
+        signup.setBackground(new Color(0,0,0,180));
+        signup.setBounds(280,100,450,570);
+        lbImage.add(signup);
+        
+        btSave = new JButton("Save");
+        btSave.setBounds(50,100,100,30);
+        signup.add(btSave);
+        btSave.addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == btSave){
+            loginPage fp  = new loginPage();
+            
+            
+        }
+    }
+}
+
+
+=============
+
+loginPage.java
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package librarymanagementsystem;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+/**
+ *
+ * @author LENOVO
+ */
+
+class LoginSwing implements ActionListener{
+    
+    JFrame fr = new JFrame("Reader's Circle");
+    
+    ImageIcon backImage,loginImage;
+    JPanel login;
+    JLabel lbImage,lbUser,lbPassword,loginTitle,lbQuestion,lbSignup;
+    JTextField txtUser;
+    JPasswordField txtPassword;
+    JButton btLogin;
+    
+    public LoginSwing() {
+    
+        fr.setLayout(null);
+        fr.setSize(1000,750);
+        fr.setLocation(500,200);
+        fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        BackgroundImage();
+        LoginPanel();
+        LoginComponents();
+        
+        fr.setVisible(true);
+    }
+    public void BackgroundImage(){
+        
+        backImage = new ImageIcon("library1.jpg");
+        Image img = backImage.getImage();
+        Image tempImg = img.getScaledInstance(1000,750,Image.SCALE_SMOOTH);
+        backImage = new ImageIcon(tempImg);
+        lbImage = new JLabel("",backImage,JLabel.CENTER);
+        lbImage.setBounds(0,0,1000,750);
+        fr.add(lbImage);
+    }
+    public void LoginPanel(){
+        
+        login = new JPanel();
+        login.setLayout(null);
+        login.setSize(400,500);
+        login.setBackground(new Color(0,0,0,180));
+        login.setBounds(290,190,400,475);
+        lbImage.add(login);
+    }
+    public void LoginComponents(){
+    
+        Font f1 = new Font("Verdana",Font.BOLD,35);
+        Font f2 = new Font("Consolas",Font.BOLD,16);
+        Font f3 = new Font("Consolas",Font.PLAIN,14);
+        Font f4 = new Font("Arial",Font.PLAIN,16);
+        Font f5 = new Font("Arial",Font.BOLD,16);
+        
+        loginTitle = new JLabel("Sign In");
+        loginTitle.setBounds(140,18,150,45);
+        loginTitle.setFont(f1);
+        loginTitle.setForeground(Color.WHITE);
+        login.add(loginTitle);
+        
+        lbUser = new JLabel("USERNAME");
+        lbUser.setBounds(50,100,100,30);
+        lbUser.setFont(f2);
+        lbUser.setForeground(Color.WHITE);
+        login.add(lbUser);
+        
+        txtUser = new JTextField();
+        txtUser.setBounds(50,130,320,35);
+        txtUser.setFont(f3);
+        txtUser.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        txtUser.setForeground(Color.WHITE);
+        txtUser.setBackground(new Color(0,0,0,150));
+        login.add(txtUser);
+        
+        lbPassword = new JLabel("PASSWORD");
+        lbPassword.setBounds(50,190,100,30);
+        lbPassword.setFont(f2);
+        lbPassword.setForeground(Color.WHITE);
+        login.add(lbPassword);
+        
+        txtPassword = new JPasswordField();
+        txtPassword.setBounds(50,220,320,35);
+        txtPassword.setFont(f3);
+        txtPassword.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        txtPassword.setForeground(Color.WHITE);
+        txtPassword.setBackground(new Color(0,0,0,150));
+        login.add(txtPassword);
+       
+        btLogin = new JButton(new ImageIcon("loginButton.png"));
+        btLogin.setBounds(220,320,180,30);
+        login.add(btLogin);
+        btLogin.addActionListener(this);
+        
+        lbQuestion = new JLabel("Do not have an account?");
+        lbQuestion.setBounds(50,410,180,30);
+        lbQuestion.setFont(f4);
+        lbQuestion.setForeground(Color.WHITE);
+        login.add(lbQuestion);
+        
+        lbSignup = new JLabel("Sign Up");
+        lbSignup.setBounds(230,410,80,30);
+        lbSignup.setFont(f5);
+        lbSignup.setForeground(Color.WHITE);
+        login.add(lbSignup);
+        lbSignup.addMouseListener(new MouseAdapter()
+        {
+                @Override
+                public void mousePressed(MouseEvent e){
+                    
+                    signupPage sp = new signupPage();
+                }
+        
+        });
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+        if(e.getSource() == btLogin){
+        
+            firstPage fp = new firstPage();
+        }
+    }
+}
+
+public class loginPage {
+
+    public static void main(String[] args) {
+        new LoginSwing();
+    }
+}

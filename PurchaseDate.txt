@@ -1,0 +1,15 @@
+lbPurdate = new JLabel("Date of Purchase");
+        lbPurdate.setBounds(50,350,200,20);
+        lbPurdate.setFont(f2);
+        lbPurdate.setForeground(Color.WHITE);
+        login.add(lbPurdate);
+        
+        txtPurdate = new JDateChooser();
+        txtPurdate.setBounds(50,380,300,35);
+        txtPurdate.setFont(f3);
+        txtPurdate.setOpaque(true);
+        txtPurdate.setBorder(BorderFactory.createLineBorder(Color.RED));
+        txtPurdate.setForeground(Color.WHITE);
+        txtPurdate.setBackground(Color.BLUE);
+        txtPurdate.setDateFormatString("yyyy-mm-dd");
+        login.add(txtPurdate);
